@@ -8,5 +8,5 @@ def perform_operation(num1, num2, operation):
       return "Undefined"
     else:
       return num1 / num2
-  else:
+  elif operation == "multiply":
     return num1 * num2
