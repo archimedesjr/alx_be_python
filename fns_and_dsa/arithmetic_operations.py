@@ -1,20 +1,12 @@
 def perform_operation(num1, num2, operation):
-  if operation == "+":
-    result = float(num1) + float(num2)
-    return result
-  elif operation == "-":
-    result = float(num1) - float(num2)
-    return result
-  elif operation == "/":
-    if float(num2) == 0:
-      result = "Undefined"
-      return result
+  if operation == "add":
+      return num1 + num2
+  elif operation == "subtract":
+    return num1 - num2
+  elif operation == "divide":
+    if num2 == 0:
+      return "Undefined"
     else:
-      result = float(num1) / float(num2)
-      return result
+      return num1 / num2
   else:
-    result = float(num1) * float(num2)
-    return result
-
-answer = perform_operation(5,0,"/")
-print(answer)
+    return num1 * num2
