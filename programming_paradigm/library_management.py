@@ -13,18 +13,17 @@ class Library:
   
   def list_available_books(self):
     for book in self._books:
-      print(f"{book.title} by {book.author}")
+      if not book._is_checked_out:
+        print(f"{book.title} by {book.author}")
 
   def check_out_book(self, title):
     for book in self._books:
       if book.title == title:
-        self._books.remove(book)
-      print(f"{book.title} by {book.author}")
-      self._is_checked_out = True
+        book._is_checked_out = True
+        break
         
-  def return_book(self):
-    self._is_checked_out = False
+  def return_book(self, title):
     for book in self._books:
       if book.title == title:
-        self.books.append(book)
-      print(f"{book.title} by {book.author}")
+        book._is_checked_out = False
+        break
