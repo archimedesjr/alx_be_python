@@ -2,20 +2,27 @@ class Book:
   def __init__(self, title, author):
     self.title = title
     self.author = author
-    self._is_checked_out = "Private Attribute"
+    self._is_checked_out = False
 
-class Library(Book):
+class Library:
   def __init__(self):
-    self._books = "Private Attribute"
+    self._books = []
+
+  def add_book(self, book):
+    self._books.append(book)
   
-  def add_book(self):
-    pass
+  def list_available_books(self):
+    for book in self._books:
+      print(f"{book.title} by {book.author}")
 
   def check_out_book(self, title):
-    pass
-
+    for book in self._books:
+      if book.title == title:
+        self._books.remove(book)
+      print(f"{book.title} by {book.author}")
+        
   def return_book(self, title):
-    pass
-
-  def list_available_books(self, title):
-    pass
+    for book in self._books:
+      if book.title == title:
+        self.books.append(book)
+      print(f"{book.title} by {book.author}")
